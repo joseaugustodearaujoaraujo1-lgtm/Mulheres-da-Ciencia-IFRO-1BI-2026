@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(180deg, rgb(29, 29, 29), black);
+    background-attachment: fixed;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.All{
+    animation: subir 3s ease ;
+}
+
+@keyframes arrastarLateral {
+    0%{
+        transform: translateX(100vw);
+    }
+
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes subir{
+    0%{
+        transform: translateY(100vh);
+    }
+
+    100%{
+        transform: translateY(0vh);
+    }
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 0.1vh solid rgb(90, 90, 90);
+    height: 10vh;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    animation: arrastarLateral 3s ease;
+}
+
+.menu .Opcs{
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.Opcs a{
+    text-decoration: none;
+    color: rgb(208, 208, 208);
+    font-weight: 700;
+    
+}
+
+.menu .logo{
+    margin: 3vw;
+    height: 4vh;
+    
+}
+
+.menu h1{
+    width: 50vw;
+    font-weight: 600;
+    font-size: 3.5vmin;
+}
+
+.img-margaret{
+    width: 40vw;
+}
+
+.ano{
+    background-color: rgba(0, 55, 0, 0.516);
+    color: rgb(83, 175, 83);
+    border-radius: 10vh;
+    width:15vh;
+    padding: 1vh;
+    border: 0.1vh solid green;
+    margin: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-paragrafo{
+    margin-top:10vh ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+}
+
+.img-margaret{
+    border-radius: 2vh;
+    box-shadow: 0vh 0vh 3vh 0.3vh rgb(69, 69, 69);
+    width: 50vw;
+    margin-right: 3vw;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragrafo{
+    width: 50vw;
+    margin-left: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+ .paragrafo h1{
+    font-size: 12vh;
+    font-weight: 500;
+    width: 40vw;
+}
+
+.paragrafo > p {
+    opacity: 0.7;
+    font-size: 2.5vh;
+    width: 40vw;
+}
+
+@media (max-width: 900px){
+    .img-paragrafo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-margaret{
+        width: 80vw;
+        margin: 2vh;
+    }
+
+    .paragrafo{
+        width: 80vw;
+        
+    }
+
+    .paragrafo h1{
+        font-size: 8vh;
+    }
+
+    .paragrafo > p{
+        width: 40vh;
+    }
+}
+
+.All-cards{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.Cards{
+    background-color: rgba(0, 108, 0, 0.318);
+    padding: 1vh;
+    border-radius: 1vh;
+    border: 0.1vh solid green;
+    background-color: rgba(0, 55, 0, 0.516);
+    margin: 2vh;
+}
+
+.Cards h2{
+    font-weight: 400;
+    display: flex;
+    justify-content: start;
+    width: 15vmax;
+    color: rgb(105, 218, 105);
+    font-size: 3.5vh;
+}
+
+.Cards p{
+    opacity: 0.7;
+    font-weight: 300;
+    font-size: 2vh;
+}
+
+/* ========================================
+INFORMAÇÕES COMPLEMENTARES EM CARDS
+=========================================== */
+
+.Info-complementares{
+    background-color: rgba(29, 29, 29, 0.299);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10vh;
+}
+
+.Info-complementares .cards{
+    background-color: rgb(20, 20, 20);
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    border-radius: 2vh;
+    border: 0.1vh solid rgb(38, 76, 38);
+    margin: 2vh;
+}
+
+.cards{
+    display: flex;
+    align-items: start;
+    height: 20vh;
+    justify-content: space-around;
+}
+
+.cards img{
+    height: 5vh;
+    align-items: start;
+    
+}
+
+/* ======================================
+FRASE FINAL
+========================================= */
+
+.container-frase{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+    background-color: rgb(12, 10, 10);
+}
+
+.container-frase h1{
+    opacity: 0.7;
+    font-weight: 300;
+    font-size: 4vh;
+    font-style: italic;
+}
+
+.container-frase p{
+    color: rgb(0, 153, 23);
+    font-size: 2vh;
+    font-weight: 600;
+}
