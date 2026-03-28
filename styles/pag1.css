@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background: linear-gradient(180deg, rgb(29, 29, 29), black);
     background-attachment: fixed;
     color: white;
@@ -12,106 +12,121 @@ body{
 
 }
 
-.All{
-    animation: subir 3s ease ;
+.All {
+    animation: subir 3s ease;
 }
 
 @keyframes arrastarLateral {
-    0%{
+    0% {
         transform: translateX(100vw);
     }
 
-    100%{
+    100% {
         transform: translateX(0vw);
     }
 }
 
-@keyframes subir{
-    0%{
+@keyframes subir {
+    0% {
         transform: translateY(100vh);
     }
 
-    100%{
+    100% {
         transform: translateY(0vh);
     }
 }
 
-.menu{
+.menu {
     display: flex;
     flex-direction: row;
     align-items: center;
     border-bottom: 0.1vh solid rgb(90, 90, 90);
     height: 10vh;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     animation: arrastarLateral 3s ease;
+    background-color: rgba(0, 87, 62, 0.302);
 }
 
-.menu .Opcs{
+.menu .Opcs {
     width: 40vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.Opcs a{
+
+.Opcs a {
     text-decoration: none;
     color: rgb(208, 208, 208);
     font-weight: 700;
-    
+
 }
 
-.menu .logo{
+.Opcs a:hover{
+    border-bottom: 0.3vh solid rgb(195, 255, 0);
+    scale: 103%;
+}
+
+.menu .logo {
     margin: 3vw;
     height: 4vh;
-    
+
 }
 
-.menu h1{
+.menu h1 {
     width: 50vw;
     font-weight: 600;
     font-size: 3.5vmin;
 }
 
-.img-margaret{
+.img-margaret {
     width: 40vw;
 }
 
-.ano{
+.ano {
     background-color: rgba(0, 55, 0, 0.516);
     color: rgb(83, 175, 83);
     border-radius: 10vh;
-    width:15vh;
+    width: 15vh;
     padding: 1vh;
     border: 0.1vh solid green;
     margin: 1vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease-in;
 }
 
-.img-paragrafo{
-    margin-top:10vh ;
+.ano:hover {
+    border: none;
+    scale: 105%;
+    box-shadow: 0vh 0vh 2vh 0.1vh rgb(0, 0, 0);
+}
+
+.img-paragrafo {
+    margin-top: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     height: auto;
 }
 
-.img-margaret{
+.img-margaret {
     border-radius: 2vh;
-    box-shadow: 0vh 0vh 3vh 0.3vh rgb(69, 69, 69);
     width: 50vw;
     margin-right: 3vw;
+    box-shadow: 0vh 0vh 2vh 0.1vh rgb(0, 0, 0);
 }
 
-.img{
+.img {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
-.paragrafo{
+.paragrafo {
     width: 50vw;
     margin-left: 2vh;
     display: flex;
@@ -120,60 +135,60 @@ body{
 }
 
 
- .paragrafo h1{
+.paragrafo h1 {
     font-size: 12vh;
     font-weight: 500;
     width: 40vw;
 }
 
-.paragrafo > p {
+.paragrafo>p {
     opacity: 0.7;
     font-size: 2.5vh;
     width: 40vw;
 }
 
-@media (max-width: 900px){
-    .img-paragrafo{
+@media (max-width: 900px) {
+    .img-paragrafo {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .img-margaret{
+
+    .img-margaret {
         width: 80vw;
         margin: 2vh;
     }
 
-    .paragrafo{
+    .paragrafo {
         width: 80vw;
-        
+
     }
 
-    .paragrafo h1{
+    .paragrafo h1 {
         font-size: 8vh;
     }
 
-    .paragrafo > p{
+    .paragrafo>p {
         width: 40vh;
     }
 }
 
-.All-cards{
+.All-cards {
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
-.Cards{
-    background-color: rgba(0, 108, 0, 0.318);
+.Cards {
     padding: 1vh;
     border-radius: 1vh;
-    border: 0.1vh solid green;
     background-color: rgba(0, 55, 0, 0.516);
     margin: 2vh;
+    border: 0.2vh solid rgb(38, 76, 38);
 }
 
-.Cards h2{
+.Cards h2 {
     font-weight: 400;
     display: flex;
     justify-content: start;
@@ -182,17 +197,23 @@ body{
     font-size: 3.5vh;
 }
 
-.Cards p{
+.Cards p {
     opacity: 0.7;
     font-weight: 300;
     font-size: 2vh;
+}
+
+.Cards:hover {
+    border: none;
+    scale: 105%;
+    box-shadow: 0vh 0vh 2vh 0.1vh rgb(0, 0, 0);
 }
 
 /* ========================================
 INFORMAÇÕES COMPLEMENTARES EM CARDS
 =========================================== */
 
-.Info-complementares{
+.Info-complementares {
     background-color: rgba(29, 29, 29, 0.299);
     display: flex;
     flex-wrap: wrap;
@@ -200,35 +221,35 @@ INFORMAÇÕES COMPLEMENTARES EM CARDS
     padding: 10vh;
 }
 
-.Info-complementares .cards{
-    background-color: rgb(20, 20, 20);
+.Info-complementares .cards {
+    background-color: rgb(12, 12, 12);
     width: 40vh;
     display: flex;
     flex-direction: column;
+    align-items: start;
     padding: 1vh;
     border-radius: 2vh;
-    border: 0.1vh solid rgb(38, 76, 38);
     margin: 2vh;
-}
-
-.cards{
-    display: flex;
-    align-items: start;
     height: 20vh;
     justify-content: space-around;
 }
 
-.cards img{
+.cards:hover {
+    border: 0.2vh solid rgb(38, 76, 38);
+    scale: 105%;
+}
+
+.cards img {
     height: 5vh;
     align-items: start;
-    
+
 }
 
 /* ======================================
 FRASE FINAL
 ========================================= */
 
-.container-frase{
+.container-frase {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,14 +258,14 @@ FRASE FINAL
     background-color: rgb(12, 10, 10);
 }
 
-.container-frase h1{
+.container-frase h1 {
     opacity: 0.7;
     font-weight: 300;
     font-size: 4vh;
     font-style: italic;
 }
 
-.container-frase p{
+.container-frase p {
     color: rgb(0, 153, 23);
     font-size: 2vh;
     font-weight: 600;
