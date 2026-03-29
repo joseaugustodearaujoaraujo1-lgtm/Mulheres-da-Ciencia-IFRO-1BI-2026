@@ -10,7 +10,8 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-attachment: fixed;
     background-size: cover;
-
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes subir {
@@ -37,6 +38,7 @@ body {
     position: sticky;
     top: 0;
     background-color: rgba(0, 87, 62, 0.302);
+    z-index: 100;
 }
 
 .menu .Opcs {
@@ -80,7 +82,7 @@ body {
 }
 
 .pag2 h1 {
-    font-size: 8vh;
+    font-size:9vh;
     font-weight: 600;
     width: 80vw;
     text-align: center;
@@ -95,7 +97,7 @@ body {
 .pag2 p {
     opacity: 0.7;
     width: 80vw;
-    font-size: 2vh;
+    font-size: 2.5vh;
     font-style: italic;
     font-weight: 200;
     text-align: center;
@@ -110,7 +112,7 @@ body {
 }
 
 .img-margaret {
-    width: 40vw;
+    width: 30vw;
     border-radius: 2vh;
     height: auto;
 
@@ -125,13 +127,13 @@ body {
 
 .Paragrafo h1 {
     font-weight: 500;
-    font-size: 4vh;
+    font-size: 5vh;
 
 }
 
 .Paragrafo p {
     opacity: 0.7;
-    font-size: 2vh;
+    font-size: 3vh;
     font-weight: 200;
 }
 
@@ -168,7 +170,7 @@ CONQUISTAS PRINCIPAIS
 .Conquistas>h1 {
     text-align: center;
     font-size: 5vh;
-    font-weight: 500;
+    font-weight: 600;
     font-style: italic;
     width: 100vw;
 }
@@ -183,10 +185,10 @@ CONQUISTAS PRINCIPAIS
 .Cards {
     width: 30vh;
     margin: 2vh;
-    background-color: rgb(18, 18, 18);
+    background-color: rgb(28, 28, 28);
     padding: 2vh;
     border-radius: 1vh;
-    height: 30vh;
+    height: auto;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -199,13 +201,14 @@ CONQUISTAS PRINCIPAIS
 
 .Conquistas p {
     opacity: 0.7;
-    font-size: 1.8vh;
+    font-size: 2.5vh;
     font-weight: 400;
+    
 }
 
 .Cards h1 {
     font-size: 3vh;
-    font-weight: 400;
+    font-weight: 600;
 
 }
 
@@ -214,13 +217,19 @@ CARREIRA
 ============================== */
 
 .carreira-posterior {
-    margin: 5vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   margin-bottom: 5vh;
+   margin-top: 5vh;
 
 }
 
 .carreira-posterior > h1{
     text-align: center;
-    font-size: 4vh;
+    font-size: 5vh;
+    margin: 3vh;
     font-weight: 500;
     margin: 1vh;
     font-style: italic;
@@ -228,6 +237,6 @@ CARREIRA
 
 .carreira-posterior p{
     opacity: 0.7;
-    font-size: 2vh;
-
+    font-size: 3vh;
+    width: 80vw;
 }
