@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+:root{
+    --corFundo:rgb(0, 225, 255);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+.Cards{
+    width: 50vw;
+    height:auto;
+    display: flex;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 2vh;
+    border: none;
+    border-radius: 2vh;
+    box-shadow: 0vh 0vh 3vh 0.2vh black;
+    flex-wrap: wrap;
+    transition:all 1s ease ;
+    gap: 2vh;
+    padding: 3vh;
+}
+
+.Cards div:hover{
+    border: none;
+    border-radius: 2vh;
+    box-shadow: 0vh 0vh 3vh 0.2vh black;
+    transition:all 0.5s ease ;
+}
+
+.Cards div{
+    width: 20vh;
+    height: 20vh;
+    background-color: var(--corFundo);
+    
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+}
