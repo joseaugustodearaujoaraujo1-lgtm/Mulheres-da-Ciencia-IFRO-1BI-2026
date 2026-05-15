@@ -1,56 +1,274 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
+body {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
-:root{
-    --corFundo:rgb(0, 225, 255);
-}
-
-body{
+/* ==========================================================================
+   HEADER / NAVBAR
+   ========================================================================== */
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: blue;
+    padding: 25px 40px;
+    background-color: #0a0a0a;
 }
 
-.Cards{
-    width: 50vw;
-    height:auto;
+.logo-box {
     display: flex;
-    background-color: blue;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 2vh;
-    border: none;
-    border-radius: 2vh;
-    box-shadow: 0vh 0vh 3vh 0.2vh black;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+
+.logo-sub {
+    color: #d32f2f;
+}
+
+.logo-text {
+    font-size: 0.75rem;
+    color: #555555;
+    margin-top: 2px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.navbar nav a:hover {
+    color: #ffffff;
+}
+
+/* Botão preenchido vermelho idêntico à imagem */
+.nav-active {
+    background-color: #d32f2f;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================================== */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Linha vermelha horizontal idêntica ao seu layout */
+.divider {
+    height: 1px;
+    background-color: #d32f2f;
+    margin: 40px 0;
+    width: 100%;
+}
+
+/* ==========================================================================
+   HERO BANNER
+   ========================================================================== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #a0aec0;
+    margin-bottom: 45px;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #d32f2f;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background-color: #b71c1c;
+}
+
+/* ==========================================================================
+   SEÇÃO CONFRONTOS LENDÁRIOS (Cards com Flexbox)
+   ========================================================================== */
+h2 {
+    color: #d32f2f;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
     flex-wrap: wrap;
-    transition:all 1s ease ;
-    gap: 2vh;
-    padding: 3vh;
-}
-
-.Cards div:hover{
-    border: none;
-    border-radius: 2vh;
-    box-shadow: 0vh 0vh 3vh 0.2vh black;
-    transition:all 0.5s ease ;
-}
-
-.Cards div{
-    width: 20vh;
-    height: 20vh;
-    background-color: var(--corFundo);
-    
-    border-radius: 2vh;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 5vh;
+    gap: 25px;
+}
+
+.card {
+    background-color: #0b0b0b;
+    border: 1px solid #151515;
+    border-radius: 6px;
+    width: 350px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Marcador de imagem cinza de alta fidelidade técnica */
+.card-image {
+    background-color: #1a1a1a;
+    height: 160px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 12px;
+}
+
+.orange-badge {
+    background-color: #ff6d00;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 2px;
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.card-content .event-info {
+    font-size: 0.8rem;
+    color: #d32f2f;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.card-content .description {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-content .result-type {
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 15px;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   SEÇÃO A DÉCADA EM NÚMEROS (Grid de caixas vermelhas inferiores)
+   ========================================================================== */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #0b0b0b;
+    border: 1px solid #d32f2f;
+    border-radius: 6px;
+    padding: 30px;
+    width: 220px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #a0aec0;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+footer {
+    background-color: #0a0a0a;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #4a5568;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVIDADE COMPLETA (Até 320px)
+   ========================================================================== */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
 }
