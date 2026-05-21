@@ -1,274 +1,379 @@
+/* ==========================================================================
+   1. DEFINIÇÃO DE VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
+:root {
+    --color-bg-dark: #070707;
+    --color-bg-card: #111111;
+    --color-ufc-red: #e50914;
+    --color-ufc-red-hover: #b80710;
+    --color-text-light: #ffffff;
+    --color-text-muted: #8e8e8e;
+    --color-badge-orange: #ff5500;
+}
+
 body {
-    background-color: #050505;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.4;
+    width: 100%;
 }
 
 /* ==========================================================================
-   HEADER / NAVBAR
+   2. ESTRUTURA DO HEADER & MENU DE NAVEGAÇÃO (FLEXBOX)
    ========================================================================== */
-.navbar {
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px;
-    background-color: #0a0a0a;
+    padding: 20px 40px;
+    background-color: var(--color-bg-dark);
+    border-bottom: 1px solid #1f1f1f;
 }
 
-.logo-box {
+.logo-container {
     display: flex;
     flex-direction: column;
 }
 
-.logo-main {
+.logo-title {
+    font-size: 1.6rem;
     font-weight: 900;
-    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin: 0;
 }
 
-.logo-sub {
-    color: #d32f2f;
+.logo-highlight {
+    color: var(--color-ufc-red);
 }
 
-.logo-text {
+.logo-subtitle {
     font-size: 0.75rem;
-    color: #555555;
-    margin-top: 2px;
+    color: var(--color-text-muted);
+    margin-top: 3px;
+    text-transform: uppercase;
 }
 
-.navbar nav {
+.nav-menu {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
-.navbar nav a {
-    color: #a0aec0;
+.nav-link {
+    color: var(--color-text-muted);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 8px 18px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-.navbar nav a:hover {
-    color: #ffffff;
+.nav-link:hover {
+    color: var(--color-text-light);
 }
 
-/* Botão preenchido vermelho idêntico à imagem */
-.nav-active {
-    background-color: #d32f2f;
-    color: #ffffff !important;
-}
-
-/* ==========================================================================
-   CONTEÚDO PRINCIPAL
-   ========================================================================== */
-.main-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-/* Linha vermelha horizontal idêntica ao seu layout */
-.divider {
-    height: 1px;
-    background-color: #d32f2f;
-    margin: 40px 0;
-    width: 100%;
+.nav-link.active {
+    background-color: var(--color-ufc-red);
+    color: var(--color-text-light);
+    border-radius: 3px;
 }
 
 /* ==========================================================================
-   HERO BANNER
+   3. SEÇÃO HERO PRINCIPAL (FLEXBOX)
    ========================================================================== */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 2.4rem;
-    font-weight: 900;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    color: #a0aec0;
-    margin-bottom: 45px;
-    font-size: 1.05rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: #d32f2f;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 15px 30px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.btn-primary:hover {
-    background-color: #b71c1c;
-}
-
-/* ==========================================================================
-   SEÇÃO CONFRONTOS LENDÁRIOS (Cards com Flexbox)
-   ========================================================================== */
-h2 {
-    color: #d32f2f;
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.card {
-    background-color: #0b0b0b;
-    border: 1px solid #151515;
-    border-radius: 6px;
-    width: 350px;
-    padding: 15px;
+.hero-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 20px;
+    border-bottom: 2px solid var(--color-ufc-red);
 }
 
-/* Marcador de imagem cinza de alta fidelidade técnica */
-.card-image {
-    background-color: #1a1a1a;
-    height: 160px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    position: relative;
-    padding: 12px;
-}
-
-.orange-badge {
-    background-color: #ff6d00;
-    color: #ffffff;
-    font-size: 0.65rem;
-    font-weight: 800;
-    padding: 4px 8px;
-    border-radius: 2px;
-    display: inline-block;
-    position: absolute;
-    top: 12px;
-    right: 12px;
-}
-
-.card-content h3 {
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 8px;
-}
-
-.card-content .event-info {
-    font-size: 0.8rem;
-    color: #d32f2f;
-    font-weight: 700;
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
     margin-bottom: 15px;
 }
 
-.card-content .description {
-    font-size: 0.85rem;
-    color: #a0aec0;
-    line-height: 1.5;
-    margin-bottom: 20px;
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 620px;
+    margin-bottom: 35px;
 }
 
-.card-content .result-type {
-    font-size: 0.8rem;
-    font-weight: 700;
-    border-top: 1px solid #1a1a1a;
-    padding-top: 15px;
-    color: #ffffff;
+.btn-primary {
+    background-color: var(--color-ufc-red);
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 14px 32px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-ufc-red-hover);
 }
 
 /* ==========================================================================
-   SEÇÃO A DÉCADA EM NÚMEROS (Grid de caixas vermelhas inferiores)
+   4. SEÇÃO DOS CARDS (FLEXBOX MULTI-LINHA)
    ========================================================================== */
-.stats-container {
+.confrontos-section {
+    padding: 60px 40px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--color-ufc-red);
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+}
+
+.grid-cards-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
     justify-content: center;
-    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.stat-card {
-    background-color: #0b0b0b;
-    border: 1px solid #d32f2f;
+/* --- CONFIGURAÇÃO INDIVIDUAL DOS CARDS --- */
+.fight-card {
+    background-color: var(--color-bg-card);
     border-radius: 6px;
-    padding: 30px;
-    width: 220px;
-    text-align: center;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    border: 1px solid #1c1c1c;
 }
 
-.stat-number {
-    font-size: 2.2rem;
+.card-media {
+    height: 190px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Padrões de fundo simulando os cards originais */
+.media-mcgregor-diaz { background-image: linear-gradient(135deg, #2a2a2a, #444); }
+.media-adesanya-whittaker { background-image: linear-gradient(135deg, #333, #555); }
+.media-jones-cormier { background-image: linear-gradient(135deg, #1f1f1f, #3a3a3a); }
+.media-weili-joanna { background-image: linear-gradient(135deg, #2a2a2a, #444); }
+.media-khabib-mcgregor { background-image: linear-gradient(135deg, #333, #555); }
+.media-edwards-usman { background-image: linear-gradient(135deg, #1f1f1f, #3a3a3a); }
+
+.card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--color-badge-orange);
+    color: var(--color-text-light);
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-fight-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.5px;
+}
+
+.card-event-date {
+    font-size: 0.75rem;
+    color: var(--color-ufc-red);
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.card-text {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-footer-result {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-text-light);
+    border-top: 1px solid #222;
+    padding-top: 14px;
+}
+
+/* ==========================================================================
+   5. SEÇÃO DE ESTATÍSTICAS (FLEXBOX)
+   ========================================================================== */
+.stats-section {
+    padding: 60px 40px 80px 40px;
+    border-top: 2px solid var(--color-ufc-red);
+}
+
+.stats-main-title {
+    text-align: center;
+    color: var(--color-ufc-red);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.grid-stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.stat-box {
+    border: 1px solid var(--color-ufc-red);
+    border-radius: 4px;
+    padding: 25px 15px;
+    text-align: center;
+    width: 260px;
+    background-color: rgba(17, 17, 17, 0.5);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2.4rem;
     font-weight: 900;
-    color: #ffffff;
-    margin-bottom: 10px;
+    color: var(--color-text-light);
+    margin-bottom: 5px;
 }
 
-.stat-label {
+.stat-desc {
+    display: block;
     font-size: 0.7rem;
-    font-weight: 700;
-    color: #a0aec0;
+    color: var(--color-text-muted);
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 /* ==========================================================================
-   RODAPÉ
+   6. FOOTER DO SISTEMA
    ========================================================================== */
-footer {
-    background-color: #0a0a0a;
-    padding: 20px;
+.main-footer {
+    background-color: #030303;
+    padding: 25px 20px;
     text-align: center;
-    border-top: 1px solid #1a1a1a;
-    margin-top: 40px;
+    border-top: 1px solid #111;
 }
 
-footer p {
+.footer-copy {
     font-size: 0.8rem;
-    color: #4a5568;
+    color: #555555;
+    margin: 0;
 }
 
 /* ==========================================================================
-   MEDIA QUERIES - RESPONSIVIDADE COMPLETA (Até 320px)
+   7. MEDIA QUERIES OBRIGATÓRIAS (RESPONSIVIDADE MÁXIMA ATÉ 300PX)
    ========================================================================== */
-@media (max-width: 600px) {
-    .navbar {
+@media (max-width: 768px) {
+    .main-header {
         flex-direction: column;
         gap: 15px;
+        text-align: center;
+        padding: 20px 10px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .fight-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .stat-box {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Proteção absoluta contra quebra de layout e rolagem para telas de 300px a 360px */
+@media (max-width: 360px) {
+    html, body {
+        overflow-x: hidden; /* Elimina qualquer chance de barra de rolagem lateral */
+    }
+
+    .main-header, 
+    .confrontos-section, 
+    .stats-section {
+        padding: 30px 10px;
+    }
+
+    .nav-menu {
+        gap: 8px;
+    }
+
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.35rem;
+        word-wrap: break-word; /* Força quebra de texto longo se necessário */
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .grid-cards-container, 
+    .grid-stats-container {
+        gap: 15px;
+    }
+
+    .card-body {
         padding: 15px;
     }
 
-    .navbar nav {
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
+    .card-fight-title {
+        font-size: 1rem;
     }
+}
 
-    .hero h1 {
-        font-size: 1.7rem;
+/* Ajuste de margem extrema para celulares de exatamente 300px */
+@media (max-width: 310px) {
+    .hero-title {
+        font-size: 1.2rem;
     }
-
-    .card {
-        width: 100%;
-    }
-
-    .stat-card {
-        width: 100%;
+    .stat-value {
+        font-size: 2rem;
     }
 }

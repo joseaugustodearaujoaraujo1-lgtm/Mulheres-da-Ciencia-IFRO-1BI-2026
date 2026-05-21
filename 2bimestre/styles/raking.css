@@ -1,175 +1,316 @@
-body {
-    background-color: #0a0a0a;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
+/* ==========================================================================
+   1. DEFINIÇÃO DE VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
+:root {
+    --color-bg-dark: #070707;
+    --color-bg-card: #111111;
+    --color-ufc-red: #e50914;
+    --color-text-light: #ffffff;
+    --color-text-muted: #8e8e8e;
 }
 
-.navbar {
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.4;
+    width: 100%;
+}
+
+/* ==========================================================================
+   2. ESTRUTURA DO HEADER (FLEXBOX) - PADRÃO DO PROJETO
+   ========================================================================== */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #050505;
-    border-bottom: 1px solid #1a1a1a;
+    background-color: var(--color-bg-dark);
+    border-bottom: 1px solid #1f1f1f;
 }
 
-.logo-box {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-main {
+.logo-title {
+    font-size: 1.6rem;
     font-weight: 900;
-    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin: 0;
 }
 
-.logo-sub {
-    color: #d32f2f;
+.logo-highlight {
+    color: var(--color-ufc-red);
 }
 
-.logo-text {
+.logo-subtitle {
     font-size: 0.75rem;
-    color: #718096;
-    margin-top: 2px;
+    color: var(--color-text-muted);
+    margin-top: 3px;
+    text-transform: uppercase;
 }
 
-.navbar nav {
-    display: flex;
-    gap: 25px;
-}
-
-.navbar nav a {
-    color: #a0aec0;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 4px;
-}
-
-.navbar nav a:hover {
-    color: #ffffff;
-}
-
-.main-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.intro-section {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.intro-section h1 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-}
-
-.intro-section p {
-    color: #a0aec0;
-    font-size: 1rem;
-}
-
-h2 {
-    color: #d32f2f;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.table-section {
-    margin-bottom: 50px;
-}
-
-table {
-    width: 100%;
-    background-color: #111111;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-}
-
-th {
-    background-color: #d32f2f;
-    color: #ffffff;
-    font-weight: 700;
-    padding: 12px;
-    text-align: left;
-    font-size: 0.85rem;
-}
-
-td {
-    padding: 12px;
-    border-bottom: 1px solid #1a1a1a;
-    font-size: 0.9rem;
-    color: #e2e8f0;
-}
-
-.red-text {
-    color: #d32f2f;
-    font-weight: bold;
-}
-
-.categories-section {
-    margin-bottom: 20px;
-}
-
-.categories-container {
+.nav-menu {
     display: flex;
     gap: 15px;
 }
 
-.category-box {
-    background-color: #111111;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-    padding: 20px;
-    width: 100%;
+.nav-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 8px 18px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-.category-box h3 {
-    font-size: 0.9rem;
-    color: #d32f2f;
-    font-weight: 700;
+.nav-link:hover {
+    color: var(--color-text-light);
+}
+
+.nav-link.active {
+    background-color: var(--color-ufc-red);
+    color: var(--color-text-light);
+    border-radius: 3px;
+}
+
+/* ==========================================================================
+   3. SEÇÃO HERO DO RANKING
+   ========================================================================== */
+.ranking-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px 50px 20px;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
     margin-bottom: 15px;
 }
 
-.category-box p {
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 650px;
+}
+
+/* ==========================================================================
+   4. SEÇÃO ESTILIZAÇÃO DA TABELA (OBRIGATÓRIO)
+   ========================================================================== */
+.table-section {
+    padding: 30px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: var(--color-ufc-red);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* Caixa inteligente: evita que a tabela quebre o layout inteiro do site */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Permite rolar apenas a tabela internamente se faltar espaço */
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #1c1c1c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-bg-card);
+    text-align: left;
     font-size: 0.85rem;
-    color: #a0aec0;
-    margin-bottom: 10px;
+    min-width: 800px; /* Garante o alinhamento de colunas legível */
 }
 
-footer {
-    background-color: #050505;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #1a1a1a;
-}
-
-footer p {
+th {
+    background-color: var(--color-ufc-red);
+    color: var(--color-text-light);
+    font-weight: bold;
+    padding: 14px 16px;
+    letter-spacing: 0.5px;
     font-size: 0.8rem;
-    color: #4a5568;
 }
 
-@media (max-width: 600px) {
-    .navbar {
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #1a1a1a;
+    color: #dedede;
+}
+
+tr:nth-child(even) {
+    background-color: #161616; /* Efeito zebrado sutil de fundo escuro */
+}
+
+.rank-num {
+    color: var(--color-ufc-red);
+    font-weight: bold;
+}
+
+.fighters-name {
+    font-weight: bold;
+    color: var(--color-text-light);
+}
+
+.table-legend {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 15px;
+    border-left: 3px solid var(--color-ufc-red);
+    padding-left: 10px;
+}
+
+/* ==========================================================================
+   5. SEÇÃO DE ANÁLISE POR CATEGORIAS (FLEXBOX MULTI-LINHA)
+   ========================================================================== */
+.categories-section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #1f1f1f;
+}
+
+.categories-main-title {
+    color: var(--color-ufc-red);
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.grid-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.analysis-box {
+    background-color: var(--color-bg-card);
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    padding: 25px;
+    width: calc(50% - 13px); /* Divide em 2 colunas perfeitamente no desktop */
+    min-width: 300px;
+}
+
+.box-title {
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.analysis-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.analysis-list li {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+.analysis-list li strong {
+    color: #e2e2e2;
+}
+
+/* ==========================================================================
+   6. FOOTER PADRÃO
+   ========================================================================== */
+.main-footer {
+    background-color: #030303;
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 1px solid #111;
+    margin-top: 40px;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    color: #555555;
+    margin: 0;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (SUPORTE TOTAL ATÉ 300PX SEM ROLAGEM GLOBAL)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .analysis-box {
+        width: 100%; /* Passa para uma única coluna em tablets e celulares */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
         flex-direction: column;
         gap: 15px;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .table-section, .categories-section {
+        padding: 25px 15px;
+    }
+}
+
+/* Trava rígida anti-rolagem lateral na janela de 300px até 360px */
+@media (max-width: 360px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .main-header {
+        padding: 20px 5px;
+    }
+
+    .nav-menu {
+        gap: 6px;
+    }
+
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.4rem;
+        word-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .analysis-box {
         padding: 15px;
     }
-    .navbar nav {
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
+    
+    .box-title {
+        font-size: 0.95rem;
     }
-    .categories-container {
-        flex-direction: column;
-        gap: 10px;
+}
+
+@media (max-width: 310px) {
+    .hero-title {
+        font-size: 1.25rem;
     }
 }

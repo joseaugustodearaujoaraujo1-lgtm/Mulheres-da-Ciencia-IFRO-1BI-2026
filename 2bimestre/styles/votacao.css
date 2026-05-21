@@ -1,119 +1,135 @@
 /* ==========================================================================
-   CONFIGURAÇÃO BASE (Uso do Reset e Fundo Arena Escura)
+   1. DEFINIÇÃO DE VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
    ========================================================================== */
+:root {
+    --color-bg-dark: #070707;
+    --color-bg-card: #111111;
+    --color-ufc-red: #e50914;
+    --color-ufc-red-hover: #b80710;
+    --color-text-light: #ffffff;
+    --color-text-muted: #8e8e8e;
+    --color-input-bg: #1a1a1a;
+    --color-input-border: #2a2a2a;
+}
+
 body {
-    background-color: #0a0a0a;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.4;
+    width: 100%;
 }
 
 /* ==========================================================================
-   HEADER / NAVBAR (Flexbox Mantido Apenas Onde Necessário)
+   2. ESTRUTURA DO HEADER (FLEXBOX) - PADRÃO DO PROJETO
    ========================================================================== */
-.navbar {
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #050505;
-    border-bottom: 1px solid #1a1a1a;
+    background-color: var(--color-bg-dark);
+    border-bottom: 1px solid #1f1f1f;
 }
 
-.logo-box {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-main {
+.logo-title {
+    font-size: 1.6rem;
     font-weight: 900;
-    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin: 0;
 }
 
-.logo-sub {
-    color: #d32f2f;
+.logo-highlight {
+    color: var(--color-ufc-red);
 }
 
-.logo-text {
+.logo-subtitle {
     font-size: 0.75rem;
-    color: #718096;
-    margin-top: 2px;
+    color: var(--color-text-muted);
+    margin-top: 3px;
+    text-transform: uppercase;
 }
 
-.navbar nav {
+.nav-menu {
     display: flex;
-    gap: 25px;
+    gap: 15px;
 }
 
-.navbar nav a {
-    color: #a0aec0;
+.nav-link {
+    color: var(--color-text-muted);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 8px 18px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-.navbar nav a:hover {
-    color: #ffffff;
+.nav-link:hover {
+    color: var(--color-text-light);
+}
+
+.nav-link.active {
+    background-color: var(--color-ufc-red);
+    color: var(--color-text-light);
+    border-radius: 3px;
 }
 
 /* ==========================================================================
-   CONTAINER PRINCIPAL E ESTRUTURA VISUAL
+   3. SEÇÃO HERO DA VOTAÇÃO
    ========================================================================== */
-.main-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.intro-section {
+.votacao-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 40px;
+    padding: 70px 20px 40px 20px;
 }
 
-.intro-section h1 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 12px;
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
 }
 
-.intro-section p {
-    color: #a0aec0;
-    font-size: 1rem;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-h2 {
-    color: #d32f2f;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-align: center;
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 650px;
 }
 
 /* ==========================================================================
-   ESTILIZAÇÃO DO FORMULÁRIO (Simplificado)
+   4. SEÇÃO ESTILIZAÇÃO DO FORMULÁRIO (OBRIGATÓRIO)
    ========================================================================== */
 .form-section {
-    margin-bottom: 50px;
+    padding: 30px 40px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--color-ufc-red);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
 }
 
 .form-wrapper {
-    background-color: #111111;
-    border: 1px solid #1a1a1a;
-    border-radius: 8px;
-    padding: 35px;
-    margin-bottom: 20px;
+    background-color: var(--color-bg-card);
+    border: 1px solid #1c1c1c;
+    border-radius: 6px;
+    padding: 40px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 .form-group {
@@ -123,101 +139,139 @@ form {
 }
 
 .form-group label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
 }
 
-/* Estilização aplicada genericamente às tags brutas de entrada de dados */
-input, select, textarea {
-    background-color: #070707;
-    border: 1px solid #222222;
-    border-radius: 4px;
-    padding: 12px 15px;
-    color: #ffffff;
-    font-size: 0.9rem;
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea,
+.form-group select {
     width: 100%;
-    box-sizing: border-box;
-}
-
-select {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-size: 14px;
-    padding-right: 40px;
-}
-
-textarea {
-    resize: vertical;
+    background-color: var(--color-input-bg);
+    border: 1px solid var(--color-input-border);
+    border-radius: 4px;
+    padding: 14px;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
     font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-ufc-red);
+    outline: none;
 }
 
 .input-tip {
-    font-size: 0.7rem;
-    color: #555555;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
 }
 
-/* Checkbox Alinhamento */
+/* Customização do Select Cross-browser */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Grupo do Checkbox lateralizado */
 .checkbox-group {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    margin-top: 5px;
+    gap: 12px;
+    margin: 5px 0;
 }
 
-.checkbox-group input {
-    width: auto;
-    margin-top: 3px;
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-ufc-red);
+    cursor: pointer;
+    margin-top: 2px;
 }
 
 .checkbox-group label {
-    font-size: 0.8rem;
-    color: #a0aec0;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
     line-height: 1.4;
 }
 
-/* Botão de Envio Vermelho Sangue Agressivo */
 .btn-submit {
-    background-color: #d32f2f;
-    color: #ffffff;
+    background-color: var(--color-ufc-red);
+    color: var(--color-text-light);
     border: none;
     border-radius: 4px;
-    padding: 15px;
-    font-size: 0.9rem;
-    font-weight: 700;
+    padding: 16px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 1px;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background-color 0.2s ease;
 }
 
 .btn-submit:hover {
-    background-color: #b71c1c;
+    background-color: var(--color-ufc-red-hover);
 }
 
-/* Lista Informativa Inferior do Formulário */
-.form-info {
-    border-left: 2px solid #d32f2f;
-    padding-left: 15px;
-    margin-top: 25px;
-}
-
-.form-info ul {
+/* Bloco de notas informativas */
+.form-notes {
+    margin-top: 30px;
+    border-left: 3px solid var(--color-ufc-red);
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
-.form-info ul li {
-    font-size: 0.8rem;
-    color: #718096;
-    position: relative;
-    padding-left: 15px;
+.form-notes p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
 }
 
 /* ==========================================================================
-   SEÇÃO LÍDERES DA VOTAÇÃO
+   5. SEÇÃO DE LÍDERES ATUAIS (PRODUTO ADICIONAL DO DESIGN)
    ========================================================================== */
 .leaders-section {
-    margin-bottom: 50px;
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 1px solid #1f1f1f;
+}
+
+.leaders-title {
+    color: var(--color-ufc-red);
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
 }
 
 .leaders-container {
@@ -227,165 +281,230 @@ textarea {
 }
 
 .leader-row {
-    background-color: #111111;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-    padding: 15px 25px;
+    background-color: var(--color-bg-card);
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leader-left {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-.leader-row .position {
-    font-size: 1.1rem;
+.leader-position {
+    font-size: 1.4rem;
     font-weight: 900;
-    color: #4a5568;
-    width: 30px;
 }
 
-.leader-row .red-text {
-    color: #d32f2f;
+.pos-1 { color: var(--color-ufc-red); }
+.pos-2 { color: #ff5500; }
+.pos-3 { color: #ffaa00; }
+
+.leader-info h4 {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin: 0 0 4px 0;
 }
 
-.leader-info {
-    width: 100%;
-}
-
-.leader-info h3 {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 4px;
-}
-
-.leader-info p {
+.leader-meta {
     font-size: 0.75rem;
-    color: #555555;
+    color: var(--color-text-muted);
 }
 
-/* Elementos da Barra de Rolagem de Votos */
-.progress-wrapper {
+.leader-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 5px;
+    gap: 6px;
     width: 150px;
 }
 
-.progress-wrapper .percentage {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #d32f2f;
+.leader-percentage {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--color-ufc-red);
 }
 
 .progress-bar {
     width: 100%;
     height: 4px;
-    background-color: #222222;
+    background-color: #222;
     border-radius: 2px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background-color: #d32f2f;
-    border-radius: 2px;
+    background-color: var(--color-ufc-red);
 }
+
+.fill-1 { width: 23%; }
+.fill-2 { width: 18%; }
+.fill-3 { width: 15%; }
+.fill-4 { width: 12%; }
+.fill-5 { width: 10%; }
 
 /* ==========================================================================
-   OUTRAS FORMAS DE CONTATO
+   6. SEÇÃO DE OUTRAS FORMAS DE CONTATO (FLEXBOX)
    ========================================================================== */
-.contact-channels {
-    margin-bottom: 20px;
+.contact-section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #1f1f1f;
 }
 
-.channels-grid {
-    display: flex;
-    gap: 15px;
-    justify-content: space-between;
-}
-
-.channel-card {
-    background-color: #111111;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-    padding: 20px;
+.contact-main-title {
     text-align: center;
-    width: 100%;
+    color: var(--color-ufc-red);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.grid-contact {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.channel-card .icon {
-    font-size: 1.2rem;
-    margin-bottom: 2px;
-}
-
-.channel-card h4 {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.channel-card p {
-    font-size: 0.8rem;
-    color: #718096;
-}
-
-/* ==========================================================================
-   RODAPÉ
-   ========================================================================== */
-footer {
-    background-color: #050505;
-    padding: 20px;
+.contact-box {
+    background-color: var(--color-bg-card);
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    padding: 30px 20px;
     text-align: center;
-    border-top: 1px solid #1a1a1a;
+    width: 280px;
 }
 
-footer p {
+.contact-icon {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.contact-label {
+    display: block;
     font-size: 0.8rem;
-    color: #4a5568;
+    font-weight: bold;
+    color: var(--color-ufc-red);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
 }
 
 /* ==========================================================================
-   MEDIA QUERIES OBRIGATÓRIAS (Suporte Responsivo Completo ate 320px)
+   7. FOOTER PADRÃO
    ========================================================================== */
-@media (max-width: 600px) {
-    .navbar {
+.main-footer {
+    background-color: #030303;
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 1px solid #111;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    color: #555555;
+    margin: 0;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES (SUPORTE TOTAL ATÉ 300PX SEM ROLAGEM GLOBAL)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-header {
         flex-direction: column;
         gap: 15px;
-        padding: 15px;
+        text-align: center;
+        padding: 20px 10px;
     }
 
-    .navbar nav {
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .intro-section h1 {
-        font-size: 1.6rem;
+    .hero-title {
+        font-size: 1.8rem;
     }
 
     .form-wrapper {
-        padding: 20px;
+        padding: 25px 20px;
     }
 
     .leader-row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
-        padding: 15px;
+        gap: 15px;
+        padding: 20px;
     }
 
-    .progress-wrapper {
+    .leader-right {
         width: 100%;
         align-items: flex-start;
     }
 
-    .channels-grid {
-        flex-direction: column;
-        gap: 10px;
+    .form-section, .leaders-section, .contact-section {
+        padding: 25px 15px;
+    }
+
+    .contact-box {
+        width: 100%;
+    }
+}
+
+/* Trava rígida anti-rolagem lateral na janela de 300px até 360px */
+@media (max-width: 360px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .main-header {
+        padding: 20px 5px;
+    }
+
+    .nav-menu {
+        gap: 6px;
+    }
+
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.4rem;
+        word-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .leader-left {
+        gap: 15px;
+    }
+
+    .leader-info h4 {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 310px) {
+    .hero-title {
+        font-size: 1.25rem;
+    }
+    .form-wrapper {
+        padding: 20px 12px;
+    }
+    form {
+        gap: 18px;
     }
 }

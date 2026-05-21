@@ -4,82 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UFC DECADE - Ranking</title>
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/raking.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/raking.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo-box">
-            <span class="logo-main">UFC <span class="logo-sub">DECADE</span></span>
-            <p class="logo-text">As Maiores Lutas | 2014-2024</p>
+    <!-- TAG OBRIGATÓRIA: <header> e <nav> -->
+    <header class="main-header">
+        <div class="logo-container">
+            <h1 class="logo-title">UFC <span class="logo-highlight">DECADE</span></h1>
+            <p class="logo-subtitle">As Maiores Lutas: 2014-2024</p>
         </div>
-        <nav>
-            <a href="index.html">INÍCIO</a>
-            <a href="ranking.html">RANKING</a>
-            <a href="votacao.html">VOTAÇÃO</a>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">INÍCIO</a>
+            <a href="ranking.html" class="nav-link active">RANKING</a>
+            <a href="votacao.html" class="nav-link">VOTAÇÃO</a>
         </nav>
     </header>
 
-    <main class="main-container">
-        <section class="intro-section">
-            <h1>RANKING HISTÓRICO DAS LUTAS</h1>
-            <p>Análise técnica detalhada dos confrontos mais marcantes da última década no octógono.</p>
+    <!-- TAG OBRIGATÓRIA: <main> -->
+    <main>
+        
+        <!-- Topo da página de ranking -->
+        <section class="ranking-hero">
+            <h2 class="hero-title">RANKING HISTÓRICO DAS LUTAS</h2>
+            <p class="hero-subtitle">Análise técnica detalhada dos confrontos mais importantes da última década no octógono</p>
         </section>
 
+        <!-- TAG OBRIGATÓRIA: <section> contendo a Tabela completa -->
         <section class="table-section">
-            <h2>DADOS TÉCNICOS DOS CONFRONTOS</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>RANKING</th>
-                        <th>LUTADORES</th>
-                        <th>EVENTO</th>
-                        <th>MÉTODO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="red-text">#1</td>
-                        <td>Zhang Weili vs. Joanna Jędrzejczyk</td>
-                        <td>UFC 248</td>
-                        <td>Decisão Dividida</td>
-                    </tr>
-                    <tr>
-                        <td class="red-text">#2</td>
-                        <td>Conor McGregor vs. Nate Diaz II</td>
-                        <td>UFC 202</td>
-                        <td>Decisão Unânime</td>
-                    </tr>
-                    <tr>
-                        <td class="red-text">#3</td>
-                        <td>Israel Adesanya vs. Kelvin Gastelum</td>
-                        <td>UFC 236</td>
-                        <td>Decisão Unânime</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h3 class="section-title">DADOS TÉCNICOS DOS CONFRONTOS</h3>
+            
+            <!-- Wrapper necessário para controle de rolagem em telas minúsculas -->
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RANKING</th>
+                            <th>LUTADORES</th>
+                            <th>EVENTO</th>
+                            <th>DATA</th>
+                            <th>MÉTODO DE VITÓRIA</th>
+                            <th>ROUND</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rank-num">#1</td>
+                            <td class="fighters-name">Zhang Weili vs. Joanna Jedrzejczyk</td>
+                            <td>UFC 248</td>
+                            <td>07/03/2020</td>
+                            <td>Decisão Dividida</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#2</td>
+                            <td class="fighters-name">Conor McGregor vs. Nate Diaz II</td>
+                            <td>UFC 202</td>
+                            <td>20/08/2016</td>
+                            <td>Decisão Unânime</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#3</td>
+                            <td class="fighters-name">Israel Adesanya vs. Kelvin Gastelum</td>
+                            <td>UFC 236</td>
+                            <td>13/04/2019</td>
+                            <td>Decisão Unânime</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#4</td>
+                            <td class="fighters-name">Jon Jones vs. Daniel Cormier II</td>
+                            <td>UFC 214</td>
+                            <td>29/07/2017</td>
+                            <td>Nocaute (Chute de Cabeça)</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#5</td>
+                            <td class="fighters-name">Khabib Nurmagomedov vs. Conor McGregor</td>
+                            <td>UFC 229</td>
+                            <td>06/10/2018</td>
+                            <td>Finalização (Mata-Leão)</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#6</td>
+                            <td class="fighters-name">Leon Edwards vs. Kamaru Usman II</td>
+                            <td>UFC 278</td>
+                            <td>20/08/2022</td>
+                            <td>Nocaute (Chute de Cabeça)</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#7</td>
+                            <td class="fighters-name">Alexander Volkanovski vs. Max Holloway II</td>
+                            <td>UFC 251</td>
+                            <td>11/07/2020</td>
+                            <td>Decisão Dividida</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#8</td>
+                            <td class="fighters-name">Justin Gaethje vs. Tony Ferguson</td>
+                            <td>UFC 249</td>
+                            <td>09/05/2020</td>
+                            <td>Nocaute Técnico</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#9</td>
+                            <td class="fighters-name">Israel Adesanya vs. Robert Whittaker</td>
+                            <td>UFC 243</td>
+                            <td>06/10/2019</td>
+                            <td>Nocaute Técnico</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#10</td>
+                            <td class="fighters-name">Kamaru Usman vs. Colby Covington</td>
+                            <td>UFC 245</td>
+                            <td>14/12/2019</td>
+                            <td>Nocaute Técnico</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#11</td>
+                            <td class="fighters-name">Georges St-Pierre vs. Michael Bisping</td>
+                            <td>UFC 217</td>
+                            <td>04/11/2017</td>
+                            <td>Finalização (Mata-Leão)</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-num">#12</td>
+                            <td class="fighters-name">Amanda Nunes vs. Cris Cyborg</td>
+                            <td>UFC 232</td>
+                            <td>29/12/2018</td>
+                            <td>Nocaute</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-legend"><strong>Critérios de Ranqueamento:</strong> Impacto histórico, qualidade técnica, relevância para o título, emoção e recepção dos fãs.</p>
         </section>
 
+        <!-- Seção inferior de Blocos de Análise por Categoria -->
         <section class="categories-section">
-            <h2>ANÁLISE POR CATEGORIA</h2>
-            <div class="categories-container">
-                <div class="category-box">
-                    <h3>NOCAUTES DO ANO</h3>
-                    <p>Leon Edwards vs. Usman II (2022)</p>
-                    <p>Jon Jones vs. Cormier II (2017)</p>
+            <h3 class="categories-main-title">ANÁLISE POR CATEGORIA</h3>
+            
+            <div class="grid-categories">
+                
+                <!-- Bloco 1: Nocautes do Ano -->
+                <div class="analysis-box">
+                    <h4 class="box-title">💥 NOCAUTES DO ANO</h4>
+                    <ul class="analysis-list">
+                        <li><strong>Leon Edwards vs. Usman II (2022)</strong> - Chute de cabeça no último minuto</li>
+                        <li><strong>Jon Jones vs. Cormier II (2017)</strong> - Chute de cabeça devastador</li>
+                        <li><strong>Amanda Nunes vs. Cyborg (2018)</strong> - Nocaute em 51 segundos</li>
+                    </ul>
                 </div>
-                <div class="category-box">
-                    <h3>GUERRAS DE 5 ROUNDS</h3>
-                    <p>Weili vs. Joanna (2020)</p>
-                    <p>McGregor vs. Diaz II (2016)</p>
+
+                <!-- Bloco 2: Guerras de Cinco Rounds -->
+                <div class="analysis-box">
+                    <h4 class="box-title">🩸 GUERRAS DE CINCO ROUNDS</h4>
+                    <ul class="analysis-list">
+                        <li><strong>Weili vs. Joanna (2020)</strong> - A melhor luta feminina de todos os tempos</li>
+                        <li><strong>McGregor vs. Diaz II (2016)</strong> - Revanche épica</li>
+                        <li><strong>Adesanya vs. Gastelum (2019)</strong> - Batalha técnica suprema</li>
+                    </ul>
                 </div>
+
+                <!-- Bloco 3: Lutas Pelo Título -->
+                <div class="analysis-box">
+                    <h4 class="box-title">🏆 LUTAS PELO TÍTULO</h4>
+                    <ul class="analysis-list">
+                        <li><strong>Khabib vs. McGregor (2018)</strong> - O evento mais vendido da história</li>
+                        <li><strong>Volkanovski vs. Holloway II (2020)</strong> - Decisão controversa</li>
+                        <li><strong>Usman vs. Covington (2019)</strong> - Rivalidade brutal</li>
+                    </ul>
+                </div>
+
+                <!-- Bloco 4: Finalizações Históricas -->
+                <div class="analysis-box">
+                    <h4 class="box-title">🥋 FINALIZAÇÕES HISTÓRICAS</h4>
+                    <ul class="analysis-list">
+                        <li><strong>Khabib vs. McGregor (2018)</strong> - Mata-leão perfeito</li>
+                        <li><strong>GSP vs. Bisping (2017)</strong> - Retorno triunfal com finalização</li>
+                        <li><strong>Oliveira vs. Gaethje (2022)</strong> - Mata-leão sob pressão</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 UFC DECADE. Atividade Prática Presencial - Trabalho de Aluno.</p>
+    <!-- TAG OBRIGATÓRIA: <footer> -->
+    <footer class="main-footer">
+        <p class="footer-copy">&copy; 2026 UFC DECADE - Atividade Prática Presencial. Todos os direitos reservados.</p>
     </footer>
 
 </body>
