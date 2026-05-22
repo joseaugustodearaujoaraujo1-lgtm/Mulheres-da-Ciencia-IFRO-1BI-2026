@@ -117,7 +117,8 @@ body {
 /* Caixa inteligente: evita que a tabela quebre o layout inteiro do site */
 .table-responsive-wrapper {
     width: 100%;
-    overflow-x: auto; /* Permite rolar apenas a tabela internamente se faltar espaço */
+    overflow-x: auto;
+    /* Permite rolar apenas a tabela internamente se faltar espaço */
     -webkit-overflow-scrolling: touch;
     border: 1px solid #1c1c1c;
 }
@@ -128,7 +129,8 @@ table {
     background-color: var(--color-bg-card);
     text-align: left;
     font-size: 0.85rem;
-    min-width: 800px; /* Garante o alinhamento de colunas legível */
+    min-width: 800px;
+    /* Garante o alinhamento de colunas legível */
 }
 
 th {
@@ -147,7 +149,8 @@ td {
 }
 
 tr:nth-child(even) {
-    background-color: #161616; /* Efeito zebrado sutil de fundo escuro */
+    background-color: #161616;
+    /* Efeito zebrado sutil de fundo escuro */
 }
 
 .rank-num {
@@ -198,7 +201,8 @@ tr:nth-child(even) {
     border: 1px solid #1c1c1c;
     border-radius: 4px;
     padding: 25px;
-    width: calc(50% - 13px); /* Divide em 2 colunas perfeitamente no desktop */
+    width: calc(50% - 13px);
+    /* Divide em 2 colunas perfeitamente no desktop */
     min-width: 300px;
 }
 
@@ -251,7 +255,8 @@ tr:nth-child(even) {
    ========================================================================== */
 @media (max-width: 900px) {
     .analysis-box {
-        width: 100%; /* Passa para uma única coluna em tablets e celulares */
+        width: 100%;
+        /* Passa para uma única coluna em tablets e celulares */
     }
 }
 
@@ -266,15 +271,18 @@ tr:nth-child(even) {
     .hero-title {
         font-size: 1.8rem;
     }
-    
-    .table-section, .categories-section {
+
+    .table-section,
+    .categories-section {
         padding: 25px 15px;
     }
 }
 
 /* Trava rígida anti-rolagem lateral na janela de 300px até 360px */
 @media (max-width: 360px) {
-    html, body {
+
+    html,
+    body {
         overflow-x: hidden;
     }
 
@@ -303,7 +311,7 @@ tr:nth-child(even) {
     .analysis-box {
         padding: 15px;
     }
-    
+
     .box-title {
         font-size: 0.95rem;
     }

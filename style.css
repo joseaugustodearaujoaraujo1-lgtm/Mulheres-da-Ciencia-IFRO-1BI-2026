@@ -1,102 +1,103 @@
 /* Configuração geral e reset de espaçamentos */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Estilização do fundo da página */
 body {
-  background-color: #f4f7f6;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 /* Container principal (Centralizado e com sombra) */
 .All {
-  background-color: #ffffff;
-  max-width: 500px;
-  width: 100%;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
+    background-color: #ffffff;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 /* Título Principal */
-.All > h1 {
-  color: #006400; /* Verde institucional */
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.All>h1 {
+    color: #006400;
+    /* Verde institucional */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
 /* Informações do estudante e data */
-.All > p {
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 5px;
+.All>p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
 }
 
 /* Espaçamento extra após a data */
-.All > p:last-of-type {
-  margin-bottom: 25px;
-  font-size: 0.85rem;
-  color: #888;
+.All>p:last-of-type {
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+    color: #888;
 }
 
 /* Configuração dos links (Remove o sublinhado padrão) */
 .All a {
-  text-decoration: none;
-  display: block;
-  margin-bottom: 15px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
 }
 
 /* Blocos dos Bimestres (Estilo base comum) */
-.primeiro-bimestre, 
+.primeiro-bimestre,
 .segundo-bimestre {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  border-radius: 8px;
-  color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
 }
 
 /* Efeito ao passar o mouse (Hover) */
-.primeiro-bimestre:hover, 
+.primeiro-bimestre:hover,
 .segundo-bimestre:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Cor específica do 1° Bimestre (Verde escuro) */
 .primeiro-bimestre {
-  background: linear-gradient(135s, #2e7d32, #1b5e20);
-  color: black;
+    background: linear-gradient(135s, #2e7d32, #1b5e20);
+    color: black;
 }
 
 /* Cor específica do 2° Bimestre (Azul escuro) */
 .segundo-bimestre {
-  background: linear-gradient(135s, #1565c0, #0d47a1);
-  color: black;
+    background: linear-gradient(135s, #1565c0, #0d47a1);
+    color: black;
 }
 
 /* Números grandes dentro dos blocos (1° e 2°) */
-.primeiro-bimestre h1, 
+.primeiro-bimestre h1,
 .segundo-bimestre h1 {
-  font-size: 2.5rem;
-  margin-right: 20px;
-  opacity: 0.9;
+    font-size: 2.5rem;
+    margin-right: 20px;
+    opacity: 0.9;
 }
 
 /* Texto descritivo dos blocos */
-.primeiro-bimestre h3, 
+.primeiro-bimestre h3,
 .segundo-bimestre h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 500;
 }

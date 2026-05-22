@@ -259,7 +259,8 @@ body {
     border: 1px solid #1c1c1c;
     border-radius: 4px;
     padding: 25px;
-    width: calc(25% - 19px); /* Divide em 4 colunas perfeitamente no desktop */
+    width: calc(25% - 19px);
+    /* Divide em 4 colunas perfeitamente no desktop */
     min-width: 220px;
     text-align: center;
     border-left: 3px solid var(--color-ufc-red);
@@ -302,7 +303,8 @@ body {
    ========================================================================== */
 @media (max-width: 992px) {
     .stat-box {
-        width: calc(50% - 13px); /* 2 colunas para estatísticas em tablets */
+        width: calc(50% - 13px);
+        /* 2 colunas para estatísticas em tablets */
     }
 }
 
@@ -317,19 +319,23 @@ body {
     .hero-title {
         font-size: 1.8rem;
     }
-    
-    .confrontos-section, .stats-section {
+
+    .confrontos-section,
+    .stats-section {
         padding: 25px 15px;
     }
 
     .stat-box {
-        width: 100%; /* Força colunas inteiras em telas compactas */
+        width: 100%;
+        /* Força colunas inteiras em telas compactas */
     }
 }
 
 /* Trava rígida anti-rolagem lateral na janela de 300px até 360px */
 @media (max-width: 360px) {
-    html, body {
+
+    html,
+    body {
         overflow-x: hidden;
     }
 

@@ -301,9 +301,17 @@ form {
     font-weight: 900;
 }
 
-.pos-1 { color: var(--color-ufc-red); }
-.pos-2 { color: #ff5500; }
-.pos-3 { color: #ffaa00; }
+.pos-1 {
+    color: var(--color-ufc-red);
+}
+
+.pos-2 {
+    color: #ff5500;
+}
+
+.pos-3 {
+    color: #ffaa00;
+}
 
 .leader-info h4 {
     font-size: 0.95rem;
@@ -343,11 +351,25 @@ form {
     background-color: var(--color-ufc-red);
 }
 
-.fill-1 { width: 23%; }
-.fill-2 { width: 18%; }
-.fill-3 { width: 15%; }
-.fill-4 { width: 12%; }
-.fill-5 { width: 10%; }
+.fill-1 {
+    width: 23%;
+}
+
+.fill-2 {
+    width: 18%;
+}
+
+.fill-3 {
+    width: 15%;
+}
+
+.fill-4 {
+    width: 12%;
+}
+
+.fill-5 {
+    width: 10%;
+}
 
 /* ==========================================================================
    6. SEÇÃO DE OUTRAS FORMAS DE CONTATO (FLEXBOX)
@@ -451,7 +473,9 @@ form {
         align-items: flex-start;
     }
 
-    .form-section, .leaders-section, .contact-section {
+    .form-section,
+    .leaders-section,
+    .contact-section {
         padding: 25px 15px;
     }
 
@@ -462,7 +486,9 @@ form {
 
 /* Trava rígida anti-rolagem lateral na janela de 300px até 360px */
 @media (max-width: 360px) {
-    html, body {
+
+    html,
+    body {
         overflow-x: hidden;
     }
 
@@ -501,9 +527,11 @@ form {
     .hero-title {
         font-size: 1.25rem;
     }
+
     .form-wrapper {
         padding: 20px 12px;
     }
+
     form {
         gap: 18px;
     }
