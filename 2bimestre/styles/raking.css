@@ -66,7 +66,7 @@ body {
     color: var(--color-text-light);
 }
 
-.nav-link.active {
+.active {
     background-color: var(--color-ufc-red);
     color: var(--color-text-light);
     border-radius: 3px;
@@ -114,12 +114,9 @@ body {
     margin-bottom: 25px;
 }
 
-/* Caixa inteligente: evita que a tabela quebre o layout inteiro do site */
 .table-responsive-wrapper {
     width: 100%;
     overflow-x: auto;
-    /* Permite rolar apenas a tabela internamente se faltar espaço */
-    -webkit-overflow-scrolling: touch;
     border: 1px solid #1c1c1c;
 }
 
@@ -130,7 +127,6 @@ table {
     text-align: left;
     font-size: 0.85rem;
     min-width: 800px;
-    /* Garante o alinhamento de colunas legível */
 }
 
 th {
@@ -148,10 +144,7 @@ td {
     color: #dedede;
 }
 
-tr:nth-child(even) {
-    background-color: #161616;
-    /* Efeito zebrado sutil de fundo escuro */
-}
+
 
 .rank-num {
     color: var(--color-ufc-red);
@@ -202,7 +195,6 @@ tr:nth-child(even) {
     border-radius: 4px;
     padding: 25px;
     width: calc(50% - 13px);
-    /* Divide em 2 colunas perfeitamente no desktop */
     min-width: 300px;
 }
 
@@ -256,7 +248,6 @@ tr:nth-child(even) {
 @media (max-width: 900px) {
     .analysis-box {
         width: 100%;
-        /* Passa para uma única coluna em tablets e celulares */
     }
 }
 
@@ -278,7 +269,6 @@ tr:nth-child(even) {
     }
 }
 
-/* Trava rígida anti-rolagem lateral na janela de 300px até 360px */
 @media (max-width: 360px) {
 
     html,
