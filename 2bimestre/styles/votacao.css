@@ -2,7 +2,7 @@
    1. DEFINIÇÃO DE VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
    ========================================================================== */
 :root {
-    --color-bg-dark: #070707;
+    --color-bg-dark: #070706;
     --color-bg-card: #111111;
     --color-ufc-red: #e50914;
     --color-ufc-red-hover: #b80710;
@@ -145,8 +145,8 @@ form {
     color: #e0e0e0;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
+.form-group input,
+.form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
@@ -160,12 +160,6 @@ form {
     transition: border-color 0.2s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: var(--color-ufc-red);
-    outline: none;
-}
 
 .input-tip {
     font-size: 0.75rem;
@@ -180,14 +174,12 @@ form {
 }
 
 .select-wrapper select {
-    appearance: none;
-    -webkit-appearance: none;
     cursor: pointer;
     padding-right: 40px;
 }
 
 .select-wrapper::after {
-    content: "▼";
+    content: "";
     font-size: 0.7rem;
     color: var(--color-text-light);
     position: absolute;
@@ -209,10 +201,9 @@ form {
     margin: 5px 0;
 }
 
-.checkbox-group input[type="checkbox"] {
+.checkbox-group input {
     width: 16px;
     height: 16px;
-    accent-color: var(--color-ufc-red);
     cursor: pointer;
     margin-top: 2px;
 }
